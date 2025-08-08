@@ -7,13 +7,20 @@ export default function Layout() {
     <Tabs>
       <Tabs.Screen
         name="index"
-        options={{ title: "Home", tabBarIcon: () => <Entypo name="leaf" /> }}
+        options={{
+          title: "Home",
+          tabBarIcon: ({ size, color }) => (
+            <Entypo name="leaf" size={size} color={color} />
+          ),
+        }}
       />
       <Tabs.Screen
         name="profile"
         options={{
           title: "Profile",
-          tabBarIcon: () => <Entypo name="feather" />,
+          tabBarIcon: ({ size, color }) => (
+            <Entypo name="feather" size={size} color={color} />
+          ),
         }}
       />
     </Tabs>
