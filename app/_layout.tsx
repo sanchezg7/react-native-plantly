@@ -1,6 +1,7 @@
 import { Tabs } from "expo-router";
 // https://icons.expo.fyi/Index
 import { Entypo } from "@expo/vector-icons";
+import { theme } from "@/theme";
 
 // You can define your own tab bar if you want
 export default function Layout() {
