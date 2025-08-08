@@ -53,3 +53,8 @@ Changing tabs to stack will allow the bottom bar navigation to show by default
 
 Screens exist as soon as they are part of the filesystem. 
 If I left out the tab definitions, it will default to all. We define the tabs so we can define options. Add header buttons, titles etc
+
+# Icons
+Find [icons](https://icons.expo.fyi/Index)
+
+
