@@ -44,4 +44,12 @@ This is optional
 npx expo install react-native-web react-dom
 ```
 
+## Layout
+It will use the native defaults for the components. So android may look different from ios
 
+# Bottom Tabs
+- add a new file
+Changing tabs to stack will allow the bottom bar navigation to show by default
+
+Screens exist as soon as they are part of the filesystem. 
+If I left out the tab definitions, it will default to all. We define the tabs so we can define options. Add header buttons, titles etc
