@@ -4,7 +4,7 @@ import { Entypo } from "@expo/vector-icons";
 
 export default function Layout() {
   return (
-    <Tabs>
+    <Tabs screenOptions={{ tabBarActiveTintColor: "#29b365" }}>
       <Tabs.Screen
         name="index"
         options={{
