@@ -21,3 +21,27 @@ npx expo install -- --save-dev prettier eslint-config-prettier eslint-plugin-pre
 ```bash
 npx expo start
 ```
+
+# Expo Router
+File-based navigation
+[Docs for installing nav](https://kadikraman.github.io/intermediate-react-native-v2-course/docs/navigation/4-1-install-navigation/)
+
+```bash
+npx expo install expo-router react-native-safe-area-context react-native-screens expo-linking expo-constants expo-status-bar
+```
+
+Safe area allows you to put only in the visible area of the phone
+React navigation gives deep linking for free. It's implicit for the filesystem. Deep linking is native to the filesystem way of defining the routes
+
+## Entry point
+expo/AppEntry.js will require the app for you when defining it in `package.json`
+Mobile app will listen to a particular keyword. scheme `plantly` is what allows your OS to share to an app
+e.g. you might see `open with` a browser. multiple browser apps are registered 
+
+## React native web 
+This is optional
+```bash
+npx expo install react-native-web react-dom
+```
+
+
