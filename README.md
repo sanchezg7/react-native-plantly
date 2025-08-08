@@ -16,3 +16,8 @@ eslint.config.js created
 ```bash
 npx expo install -- --save-dev prettier eslint-config-prettier eslint-plugin-prettier eslint-plugin-react-native
 ```
+
+# Start the project
+```bash
+npx expo start
+```
