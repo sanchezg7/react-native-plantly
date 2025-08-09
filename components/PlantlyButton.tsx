@@ -5,13 +5,14 @@ import * as Haptics from "expo-haptics";
 type Props = {
   title: string;
   onPress: () => void;
+  textAlign?: "left" | "center" | "right";
 };
 
 /**
  * Implemeneted from here https://kadikraman.github.io/intermediate-react-native-v2-course/docs/custom-button/
  * @constructor
  */
-export function PlantlyButton({ title, onPress }: Props) {
+export function PlantlyButton({ title, onPress, textAlign = "left" }: Props) {
   const handlePressed = () => {
     if (Platform.OS !== "web") {
       Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
@@ -29,7 +30,7 @@ export function PlantlyButton({ title, onPress }: Props) {
         return styles.button;
       }}
     >
-      <Text style={styles.text}>{title}</Text>
+      <Text style={{ ...styles.text, textAlign }}>{title}</Text>
     </Pressable>
   );
 }
