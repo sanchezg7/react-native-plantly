@@ -45,7 +45,7 @@ export default function NewScreen() {
     }
 
     console.log("Adding plant", name, days);
-    addPlant(name, Number(days));
+    addPlant(name, Number(days), imageUri);
     // router.navigate("/");
     router.back();
   };
