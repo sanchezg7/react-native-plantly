@@ -5,6 +5,7 @@ import { useRouter } from "expo-router";
 import { PlantlyButton } from "@/components/PlantlyButton";
 import { LinearGradient } from "expo-linear-gradient";
 import { StatusBar } from "expo-status-bar";
+import { PlantlyImage } from "@/components/PlantlyImage.tsx";
 
 // Implicitly defined by the filesystem but this creates a link so they IDE can detect
 export const route = "/onboarding";
@@ -25,6 +26,7 @@ export default function OnboardingScreen() {
       style={styles.container}
     >
       <StatusBar style="light" />
+      {/*<PlantlyImage />*/}
       <PlantlyButton title="Let me in" onPress={handlePress} />
       <Text style={styles.text}>Onboarding</Text>
     </LinearGradient>
