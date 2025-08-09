@@ -3,6 +3,7 @@ import { theme } from "@/theme";
 import { useUserStore } from "@/store/userStore";
 import { useRouter } from "expo-router";
 import { PlantlyButton } from "@/components/PlantlyButton";
+import { LinearGradient } from "expo-linear-gradient";
 
 // Implicitly defined by the filesystem but this creates a link so they IDE can detect
 export const route = "/onboarding";
@@ -16,10 +17,15 @@ export default function OnboardingScreen() {
     router.replace("/");
   };
   return (
-    <View style={styles.container}>
+    <LinearGradient
+      start={{ x: 0.5, y: 0 }}
+      end={{ x: 1, y: 0.5 }}
+      colors={[theme.colorGreen, theme.colorAppleGreen, theme.colorLimeGreen]}
+      style={styles.container}
+    >
       <PlantlyButton title="Let me in" onPress={handlePress} />
       <Text style={styles.text}>Onboarding</Text>
-    </View>
+    </LinearGradient>
   );
 }
 

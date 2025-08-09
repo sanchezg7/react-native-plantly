@@ -69,3 +69,10 @@ State management libs will use async storage under the hood.
 Touchable Opacity
 [Example](https://kadikraman.github.io/intermediate-react-native-v2-course/docs/custom-button/)
 
+## Haptics
+[Implementation](https://kadikraman.github.io/intermediate-react-native-v2-course/docs/custom-button/#add-haptic-feedback) 
+
+## Animated
+You can do reanimated for animating the buttons. Checkout the react conf app for an example of how they did this.
+
+# Linear Gradient
