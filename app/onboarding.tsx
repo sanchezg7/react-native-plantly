@@ -1,8 +1,8 @@
 import { Text, View, StyleSheet, Button } from "react-native";
 import { theme } from "@/theme";
-import { useUserStore } from "@/store/userStore.ts";
+import { useUserStore } from "@/store/userStore";
 import { useRouter } from "expo-router";
-import PlantlyButton from "@/components/PlantlyButton.tsx";
+import { PlantlyButton } from "@/components/PlantlyButton";
 
 // Implicitly defined by the filesystem but this creates a link so they IDE can detect
 export const route = "/onboarding";
@@ -12,7 +12,7 @@ export default function OnboardingScreen() {
   const toggleHasOnboarded = useUserStore((state) => state.toggleHasOnboarded);
   const handlePress = () => {
     toggleHasOnboarded();
-    // we use replace because we don't want users to go back
+    // we use 'replace' because we don't want users to go back
     router.replace("/");
   };
   return (

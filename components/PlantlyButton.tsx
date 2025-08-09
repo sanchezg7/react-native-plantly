@@ -1,6 +1,5 @@
-// A button component that won't collide names with another button
-import { Pressable, Text, StyleSheet } from "react-native";
 import { theme } from "@/theme";
+import { StyleSheet, Text, Pressable } from "react-native";
 
 type Props = {
   title: string;
@@ -11,7 +10,7 @@ type Props = {
  * Implemeneted from here https://kadikraman.github.io/intermediate-react-native-v2-course/docs/custom-button/
  * @constructor
  */
-export default function PlantlyButton({ title, onPress }: Props) {
+export function PlantlyButton({ title, onPress }: Props) {
   return (
     <Pressable onPress={onPress} style={styles.button}>
       <Text style={styles.text}>{title}</Text>
@@ -29,7 +28,7 @@ const styles = StyleSheet.create({
   button: {
     paddingHorizontal: 18,
     paddingVertical: 12,
-    borderRadius: 10,
+    borderRadius: 6,
     backgroundColor: theme.colorGreen,
   },
 });
