@@ -57,4 +57,8 @@ If I left out the tab definitions, it will default to all. We define the tabs so
 # Icons
 Find [icons](https://icons.expo.fyi/Index)
 
+# State management
+Async storage can be used to persist data across app launches
+State management libs will use async storage under the hood. 
+[Example](https://kadikraman.github.io/intermediate-react-native-v2-course/docs/navigation/4-5-state-management/)
 

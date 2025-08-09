@@ -1,10 +1,21 @@
-import { Tabs } from "expo-router";
+import { Redirect, Tabs } from "expo-router";
 // https://icons.expo.fyi/Index
 import { Entypo } from "@expo/vector-icons";
 import { theme } from "@/theme";
+import { route as onboarding } from "@/app/onboarding";
+import { useUserStore } from "@/store/userStore";
+
+// const hasFinishedOnboarding = false;
 
 // You can define your own tab bar if you want
 export default function Layout() {
+  // We listen to one field at a time, to avoid multiple rerenders for fields that are in this state even if we don't necessarily use it in this component
+  const hasFinishedOnboarding = useUserStore(
+    (state) => state.hasFinishedOnboarding,
+  );
+  if (!hasFinishedOnboarding) {
+    return <Redirect href={onboarding} />;
+  }
   return (
     <Tabs screenOptions={{ tabBarActiveTintColor: theme.colorGreen }}>
       <Tabs.Screen
