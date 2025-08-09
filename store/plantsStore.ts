@@ -20,7 +20,7 @@ type PlantsState = {
     name: string,
     wateringFrequencyDays: number,
     imageUri?: string,
-  ) => void;
+  ) => Promise<void>;
   removePlant: (plantId: string) => void;
   waterPlant: (plantId: string) => void;
 };
@@ -46,7 +46,7 @@ export const usePlantStore = create(
             to: savedImageUri,
           });
         }
-        return set((state) => {
+        set((state) => {
           return {
             ...state,
             nextId: state.nextId + 1,
@@ -63,7 +63,7 @@ export const usePlantStore = create(
         });
       },
       removePlant: (plantId: string) => {
-        return set((state) => {
+        set((state) => {
           return {
             ...state,
             plants: state.plants.filter((plant) => plant.id !== plantId),
@@ -71,7 +71,7 @@ export const usePlantStore = create(
         });
       },
       waterPlant: (plantId: string) => {
-        return set((state) => {
+        set((state) => {
           return {
             ...state,
             plants: state.plants.map((plant) => {
