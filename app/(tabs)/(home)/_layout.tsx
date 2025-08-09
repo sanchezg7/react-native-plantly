@@ -14,7 +14,10 @@ export default function Layout() {
           // hitSlop adds additional area for people to touch
           headerRight: () => (
             <Link href="/new" asChild>
-              <Pressable hitSlop={20} style={{ marginRight: 18 }}>
+              <Pressable
+                hitSlop={20}
+                style={{ marginRight: -10, marginBottom: -10 }}
+              >
                 <AntDesign
                   name="pluscircleo"
                   size={24}
@@ -26,10 +29,9 @@ export default function Layout() {
         }}
       />
       <Stack.Screen
-        name="plant/[plantId]"
+        name="plants/[plantId]"
         options={{
           title: "",
-          headerBackTitleVisible: false,
           headerTintColor: theme.colorBlack,
         }}
       ></Stack.Screen>

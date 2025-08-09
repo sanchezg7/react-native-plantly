@@ -14,14 +14,16 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.gtechsynergy.plantly"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "package": "com.gtechsynergy.plantly"
     },
     "web": {
       "favicon": "./assets/favicon.png",
@@ -30,7 +32,9 @@
       "buildMode": "bundle"
     },
     "extra": {
-      "transpilePackages": ["zustand"]
+      "transpilePackages": [
+        "zustand"
+      ]
     },
     "plugins": [
       "expo-router"

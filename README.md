@@ -87,3 +87,8 @@ If using the camera, you have to request permissions, first.
 # Dynamic Routes
 https://kadikraman.github.io/intermediate-react-native-v2-course/docs/dynamic-routes
 
+
+# Building
+npx expo install expo-dev-client
+npx expo prebuild --platform ios
+npx expo prebuild --platform android
