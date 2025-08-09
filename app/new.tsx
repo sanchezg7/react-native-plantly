@@ -10,6 +10,7 @@ import { theme } from "@/theme";
 import { PlantlyButton } from "@/components/PlantlyButton";
 import { useState } from "react";
 import { PlantlyImage } from "@/components/PlantlyImage";
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
 export default function NewScreen() {
   const [name, setName] = useState<string>();
@@ -39,8 +40,10 @@ export default function NewScreen() {
   };
 
   // ScrollView just in case there isn't enough space to render on different devices
+  // keyboardShouldPersist allows the keyboard not to be dismissed even when we hit the Add Plant button
+  // Adding the KeyboardAwareScrollView to prevent the keyboard from stepping over the input
   return (
-    <ScrollView
+    <KeyboardAwareScrollView
       style={styles.container}
       contentContainerStyle={styles.contentContainer}
       keyboardShouldPersistTaps="handled"
@@ -69,7 +72,7 @@ export default function NewScreen() {
         onPress={handleSubmit}
         textAlign="center"
       />
-    </ScrollView>
+    </KeyboardAwareScrollView>
   );
 }
 
