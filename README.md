@@ -76,3 +76,6 @@ Touchable Opacity
 You can do reanimated for animating the buttons. Checkout the react conf app for an example of how they did this.
 
 # Linear Gradient
+
+# Modals
+Need to be defined at the same level as the content we want it to be above

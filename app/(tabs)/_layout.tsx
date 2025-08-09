@@ -1,9 +1,10 @@
-import { Redirect, Tabs } from "expo-router";
+import { Redirect, Tabs, Link } from "expo-router";
 // https://icons.expo.fyi/Index
-import { Entypo } from "@expo/vector-icons";
+import { AntDesign, Entypo } from "@expo/vector-icons";
 import { theme } from "@/theme";
 import { route as onboarding } from "@/app/onboarding";
 import { useUserStore } from "@/store/userStore";
+import { Pressable } from "react-native";
 
 // const hasFinishedOnboarding = false;
 
@@ -25,6 +26,19 @@ export default function Layout() {
           tabBarShowLabel: false,
           tabBarIcon: ({ size, color }) => (
             <Entypo name="leaf" size={size} color={color} />
+          ),
+          // asChild is needed bc we have a component in there, instead of raw text
+          // hitSlop adds additional area for people to touch
+          headerRight: () => (
+            <Link href="/new" asChild>
+              <Pressable hitSlop={20} style={{ marginRight: 18 }}>
+                <AntDesign
+                  name="pluscircleo"
+                  size={24}
+                  color={theme.colorGreen}
+                />
+              </Pressable>
+            </Link>
           ),
         }}
       />
