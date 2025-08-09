@@ -83,3 +83,7 @@ Need to be defined at the same level as the content we want it to be above
 # Image Picker
 Expo Image Picker to allow for picking an image from the gallery
 If using the camera, you have to request permissions, first.
+
+# Dynamic Routes
+https://kadikraman.github.io/intermediate-react-native-v2-course/docs/dynamic-routes
+
