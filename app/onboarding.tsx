@@ -2,6 +2,7 @@ import { Text, View, StyleSheet, Button } from "react-native";
 import { theme } from "@/theme";
 import { useUserStore } from "@/store/userStore.ts";
 import { useRouter } from "expo-router";
+import PlantlyButton from "@/components/PlantlyButton.tsx";
 
 // Implicitly defined by the filesystem but this creates a link so they IDE can detect
 export const route = "/onboarding";
@@ -16,7 +17,7 @@ export default function OnboardingScreen() {
   };
   return (
     <View style={styles.container}>
-      <Button title="Let me in" onPress={handlePress} />
+      <PlantlyButton title="Let me in" onPress={handlePress} />
       <Text style={styles.text}>Onboarding</Text>
     </View>
   );

@@ -65,3 +65,7 @@ State management libs will use async storage under the hood.
 ## Persistent with Async Storage
 [Lecture](https://kadikraman.github.io/intermediate-react-native-v2-course/docs/navigation/4-6-data-persistance)
 
+# Pressable
+Touchable Opacity
+[Example](https://kadikraman.github.io/intermediate-react-native-v2-course/docs/custom-button/)
+
