@@ -79,3 +79,7 @@ You can do reanimated for animating the buttons. Checkout the react conf app for
 
 # Modals
 Need to be defined at the same level as the content we want it to be above
+
+# Image Picker
+Expo Image Picker to allow for picking an image from the gallery
+If using the camera, you have to request permissions, first.

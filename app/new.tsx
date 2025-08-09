@@ -42,7 +42,8 @@ export default function NewScreen() {
 
     console.log("Adding plant", name, days);
     addPlant(name, Number(days));
-    router.navigate("/");
+    // router.navigate("/");
+    router.back();
   };
 
   // ScrollView just in case there isn't enough space to render on different devices
