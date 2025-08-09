@@ -6,6 +6,8 @@ import {
   ScrollView,
   View,
 } from "react-native";
+import { useRouter } from "expo-router";
+import { usePlantStore } from "@/store/plantsStore";
 import { theme } from "@/theme";
 import { PlantlyButton } from "@/components/PlantlyButton";
 import { useState } from "react";
@@ -13,6 +15,8 @@ import { PlantlyImage } from "@/components/PlantlyImage";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
 export default function NewScreen() {
+  const router = useRouter();
+  const addPlant = usePlantStore((state) => state.addPlant);
   const [name, setName] = useState<string>();
   const [days, setDays] = useState<string>();
 
@@ -37,6 +41,8 @@ export default function NewScreen() {
     }
 
     console.log("Adding plant", name, days);
+    addPlant(name, Number(days));
+    router.navigate("/");
   };
 
   // ScrollView just in case there isn't enough space to render on different devices
