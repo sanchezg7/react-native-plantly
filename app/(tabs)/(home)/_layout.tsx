@@ -27,7 +27,11 @@ export default function Layout() {
       />
       <Stack.Screen
         name="plant/[plantId]"
-        options={{ title: "Plant" }}
+        options={{
+          title: "",
+          headerBackTitleVisible: false,
+          headerTintColor: theme.colorBlack,
+        }}
       ></Stack.Screen>
     </Stack>
   );
