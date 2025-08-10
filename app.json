@@ -32,12 +32,14 @@
       "buildMode": "bundle"
     },
     "extra": {
-      "transpilePackages": [
-        "zustand"
-      ]
+      "router": {},
+      "eas": {
+        "projectId": "bbef9873-c663-4e00-a3bd-a0b48ec3deee"
+      }
     },
     "plugins": [
       "expo-router"
-    ]
+    ],
+    "owner": "gsanc.tech"
   }
 }

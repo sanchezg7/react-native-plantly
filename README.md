@@ -92,3 +92,23 @@ https://kadikraman.github.io/intermediate-react-native-v2-course/docs/dynamic-ro
 npx expo install expo-dev-client
 npx expo prebuild --platform ios
 npx expo prebuild --platform android
+
+Run on the ios simulator after generating a dev build
+```bash
+npx expo run:ios
+```
+You can connect android via usb and then it will upload the app
+
+# EAS
+Expo Application Services
+Cloud service for build RN apps
+
+Check who you're logged in as
+```bash
+eas whoami
+```
+
+Init the project for use with eas
+```bash
+eas init
+```
