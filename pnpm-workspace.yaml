@@ -1,1 +1,5 @@
 nodeLinker: hoisted
+packages:
+  - "."  # Include the root package
+  # Include any other packages if you have a monorepo structure
+  # - "packages/*"
