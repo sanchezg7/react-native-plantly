@@ -125,3 +125,8 @@ Trigger a dev build for Android on eas
 ```bash
 eas build --profile=development --platform=android
 ```
+
+# Splash screen
+[Figma](https://www.figma.com/community/file/1155362909441341285/expo-app-icon-splash)
+
+> The splash screen is a 1284 × 2778 png
