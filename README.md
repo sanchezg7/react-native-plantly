@@ -112,3 +112,16 @@ Init the project for use with eas
 ```bash
 eas init
 ```
+
+[Dashboard](https://expo.dev/accounts/gsanc.tech)
+
+
+Configure the build with eas
+```bash
+eas build:configure
+```
+
+Trigger a dev build for Android on eas
+```bash
+eas build --profile=development --platform=android
+```
