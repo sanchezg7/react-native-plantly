@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     color: theme.colorWhite,
     fontFamily: Platform.select({
-      ios: "Caveat-Regular",
+      ios: "Caveat-Regular", // Sourced from Identifiers in Font Book after inspecting .ttf
       android: "Caveat_400Regular",
     }),
   },

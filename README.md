@@ -163,6 +163,8 @@ pnpm i expo-font @expo-google-fonts/caveat
 Add the config plugin to include the config file in the native projects. Do this in app.json
 You can put the .ttf file in the assets folder if it's custom and not through node modules
 
+For ios [find the postscript name](https://docs.expo.dev/develop/user-interface/fonts/#what-is-postscript-name-of-a-font)  of the font by bringing in the .ttf file in Font Book on mac.
+
 # Making changes
 Making changes and mods are through plugins and mods. Prebuild will modify ios and android folders
 Javascript functions are exposed to change the native code.
