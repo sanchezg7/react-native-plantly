@@ -170,4 +170,13 @@ Making changes and mods are through plugins and mods. Prebuild will modify ios a
 Javascript functions are exposed to change the native code.
 Expo go aren't availabe in expo go. You have to use development build for that.
 
+# Quick Actions
+Allows you to hold over the app icon and then perform a quick action.
+For example, you can add a plant. 
+```bash
+pnpm i expo-quick-actions
+```
+Because it requires a change on app.json, you have to rebuild the native apps again
+
+[Documentation](https://github.com/EvanBacon/expo-quick-actions)
 
