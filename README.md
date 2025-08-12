@@ -98,7 +98,9 @@ Run on the ios simulator after generating a dev build
 npx expo run:ios
 ```
 You can connect android via usb and then it will upload the app
-
+```bash
+npx expo run:android
+```
 # EAS
 Expo Application Services
 Cloud service for build RN apps
@@ -130,3 +132,40 @@ eas build --profile=development --platform=android
 [Figma](https://www.figma.com/community/file/1155362909441341285/expo-app-icon-splash)
 
 > The splash screen is a 1284 × 2778 png
+Recall that native projects are ephemeral and they are throw away. We can generate the ios and android folder.
+
+# Orbit
+Allow to install an apk and ipa to simulator, emulator or physical device. [Site](https://expo.dev/orbit)
+```bash
+brew install expo-orbit
+```
+
+# Custom Font
+[Default font](https://kadikraman.github.io/intermediate-react-native-v2-course/docs/custom-font/) are there but you can load custom fonts
+
+## Runtime
+You can load the font at runtime. This is for custom font for use in expo go. It loads async at run time
+You can use the splash screen to load the font
+
+## Build time
+You can use the expo-font plugin instead if you want
+With a development build you can use expo-font to load the font
+
+---
+Google fonts has an expansive font library. You can use that for smaller projects.
+
+Example of Caveat font
+expo exposes google fonts in a specific library
+```bash
+pnpm i expo-font @expo-google-fonts/caveat
+```
+
+Add the config plugin to include the config file in the native projects. Do this in app.json
+You can put the .ttf file in the assets folder if it's custom and not through node modules
+
+# Making changes
+Making changes and mods are through plugins and mods. Prebuild will modify ios and android folders
+Javascript functions are exposed to change the native code.
+Expo go aren't availabe in expo go. You have to use development build for that.
+
+
