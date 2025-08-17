@@ -344,3 +344,39 @@ You can build this locally
 ```sh
 You can find the build artifacts in /Users/xxx/dev/learning/react-native-intermediate-plantly/build-1755394689121.apk
 ```
+
+You can ask eas to build it for you, which comes at a cost. Make an internal build:
+```shell
+eas build --profile=preview --platform=android
+```
+
+Make a production build:
+```shell
+eas build --profile=production --platform=android
+```
+# EAS
+[EAS Project Dashboard](https://expo.dev/accounts/gsanc.tech/projects/plantly)
+
+You can take screenshots of the app. [Info here](https://docs.expo.dev/guides/store-assets/)
+
+# UI Components
+[Tamagui](https://tamagui.dev/ui/intro)
+
+# Other resources
+
+    Expo docs - documentation on the Expo framework
+    React Native docs - documentation on the React Native framework
+    React Native Directory - a searchable and filterable directory of React Native libraries.
+    Ignite - Infinite Red's battle-tested React Native project boilerplate
+    Maestro - UI testing library
+    Reanimated - the go-to library for custom animations
+    react-native-gesture-handler - the go-to library for gestures
+    react-native-vision-camera - a fancy camera library
+    react-native-skia - 3D graphics
+    react-native-bootsplash - splash screen animations
+    flash-list - a more optimized list component
+    NativeWind - Tailwind, but for React Native
+    tamagui - styling library and UI kit
+
+react-native-ama -> accessibility reference
+
