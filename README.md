@@ -226,6 +226,17 @@ If you send an email that can deep link into the plant. You can trigger the wate
 npx uri-scheme open plantly://plants/1\?action=water --ios
 ```
 
+This will provide it as a param in `useLocalSearchParams` that we can useEffect to trigger the action
+
+Reference [plantId].tsx
+
+To pass params to other screens:
+```javascript
+<Link href={{pathname: `plants/${plant.id}`, params: { action: "water" }}></Link>
+```
+
+You can use Universal and App linking for more secure approach of deep linking. It's more involved. It requires a hosted website that proves you own the domain. You would then register that domain in the app. That way, the app can verify it can handle that deeplink.
+
 # Debugging 
 `Cmd + m` to open up menu on Android
 `Ctl + Cmd + z` to open up the menu on iOS
