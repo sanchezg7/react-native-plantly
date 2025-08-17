@@ -90,8 +90,18 @@ https://kadikraman.github.io/intermediate-react-native-v2-course/docs/dynamic-ro
 
 # Building
 npx expo install expo-dev-client
+For ios
+```shell
 npx expo prebuild --platform ios
+```
+For android
+```shell
 npx expo prebuild --platform android
+```
+For both and clean
+```sh
+npx expo prebuild --clean
+```
 
 Run on the ios simulator after generating a dev build
 ```bash
@@ -168,9 +178,10 @@ For ios [find the postscript name](https://docs.expo.dev/develop/user-interface/
 # Making changes
 Making changes and mods are through plugins and mods. Prebuild will modify ios and android folders
 Javascript functions are exposed to change the native code.
-Expo go aren't availabe in expo go. You have to use development build for that.
+Expo go isn't available in expo go. You have to use a development build for that.
 
 # Quick Actions
+[Quick Action Docs](https://kadikraman.github.io/intermediate-react-native-v2-course/docs/quick-action/)
 Allows you to hold over the app icon and then perform a quick action.
 For example, you can add a plant. 
 ```bash
@@ -178,5 +189,43 @@ pnpm i expo-quick-actions
 ```
 Because it requires a change on app.json, you have to rebuild the native apps again
 
-[Documentation](https://github.com/EvanBacon/expo-quick-actions)
+## iOS
+Use [SF Symbols](https://developer.apple.com/design/human-interface-guidelines/sf-symbols)
 
+# Deep Linking
+[Deep linking docs](https://kadikraman.github.io/intermediate-react-native-v2-course/docs/deep-linking/)
+We can bind each screen/activity with an href with conventions provided by expo-router
+We open up a specific screen based on the scheme (set up in `app.json`)
+
+Open up with uri-scheme with ios
+```sh
+npx uri-scheme open plantly://plants/1 --ios
+```
+
+Note that this will not try to route this dynamic path if it doesn't exist. It will take you to the default home page.
+You can also do this from safari in iOS.
+
+Doing the same in android
+```bash
+npx uri-scheme open plantly://plants/1 --android
+```
+
+You can add this to make sure the index is added to the stack so that the user can go back
+```javascript
+export const unstable_settings = {
+  // in this stack, if not rendering index directly, put index underneath. That way we get a back button if we deep linked to another page
+  // it seems that iOS handles it fine and we need this for Android to behave the same
+  initialRouteName: "index",
+};
+```
+## Analytics
+
+## Parameters
+If you send an email that can deep link into the plant. You can trigger the watering of the plant by passing a parameter
+```sh
+npx uri-scheme open plantly://plants/1\?action=water --ios
+```
+
+# Debugging 
+`Cmd + m` to open up menu on Android
+`Ctl + Cmd + z` to open up the menu on iOS
