@@ -240,3 +240,107 @@ You can use Universal and App linking for more secure approach of deep linking. 
 # Debugging 
 `Cmd + m` to open up menu on Android
 `Ctl + Cmd + z` to open up the menu on iOS
+
+# Deploy
+Apps need to be signed in order to prevent malicious applications. This is why they have a lot of measures to prove who you are and what you are trying to do. This is because there are a lot of implication if a malicious app gets to a device and is able to exploit functionality that could be costly to recover. Stealing banking credentials, taking unauthorized pictures, etc.
+
+## Android 
+You can find the android keystore in `android/app/build.gradle`
+```gradle
+
+    signingConfigs {
+        debug {
+            storeFile file('debug.keystore')
+            storePassword 'android'
+            keyAlias 'androiddebugkey'
+            keyPassword 'android'
+        }
+    }
+```
+
+Google now provides managed build signing so that you can recover the keystore if you lose it. It can now be recovered when google proves who you are.
+You create an upload keystore to sign it; however, google will use the actual keystore to sign the app before it goes to the app store.
+
+## iOS
+There are three builds. There will be an app id. This was chosen when you ran prebuild initially. It needs to be globally unique. The provisioning profiles you make are tied to the app id.  
+## dev build
+You can only do it via xcode
+These types of builds are still limited. Push notifications are not allowed, for example.
+
+The dev cert and dev provision profile is needed.
+
+## ad hoc
+You can install on specific iOS devices. You can bind 100 devices at a time with the unique UDID to your ad hoc certificate which is bound to your account.
+
+You will use the distribution certificate and ad hoc provisioning profile is needed.
+
+## production build
+
+# EAS build signing
+EAS will sign the build for you
+All builds with EAS cli will use the ad hoc certificate. You will need an apple developer account. This is because you need xcode to build it. 
+
+```sh
+➜  react-native-intermediate-plantly git:(main) eas build --profile=preview --platform=ios
+(node:59222) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+Resolved "preview" environment for the build. Learn more: https://docs.expo.dev/eas/environment-variables/#setting-the-environment-for-your-builds
+No environment variables with visibility "Plain text" and "Sensitive" found for the "preview" environment on EAS.
+
+✔ iOS app only uses standard/exempt encryption? Learn more: https://developer.apple.com/documentation/Security/complying-with-encryption-export-regulations … yes
+No remote versions are configured for this project, buildNumber will be initialized based on the value from the local project.
+✔ Initialized buildNumber with 1.
+✔ Using remote iOS credentials (Expo server)
+
+If you provide your Apple account credentials we will be able to generate all necessary build credentials and fully validate them.
+This is optional, but without Apple account access you will need to provide all the missing values manually and we can only run minimal validation on them.
+✔ Do you want to log in to your Apple account? … yes
+
+› Log in to your Apple Developer account to continue
+✔ Apple ID: … xxxx@xxxx.com
+› The password is only used to authenticate with Apple and never stored on EAS servers
+  Learn more: https://bit.ly/2VtGWhU
+✔ Password (for xxxx@xxxx.com ): … ************
+› Saving Apple ID password to the local Keychain
+  Learn more: https://docs.expo.dev/distribution/security#keychain
+✔ Logged in, verify your Apple account to continue
+Two-factor Authentication (6 digit code) is enabled for gsanc.merch@pm.me. Learn more: https://support.apple.com/en-us/HT204915
+
+✔ How do you want to validate your account? … device / sms
+✔ Please enter the 6 digit code … 609591
+✔ Valid code
+✔ Logged in and verified
+› Team xxxx (xxxxx)
+› Provider xxxxx (xxxx)
+✔ Bundle identifier registered com.gtechsynergy.plantly
+✔ Synced capabilities: No updates
+✔ Synced capability identifiers: No updates
+✔ Fetched Apple distribution certificates
+✔ Generate a new Apple Distribution Certificate? … yes
+✔ Created Apple distribution certificate
+✔ Created distribution certificate
+✔ You don't have any registered devices yet. Would you like to register them now? … no
+Failed to set up credentials.
+Run 'eas device:create' to register your devices first
+    Error: build command failed.
+
+```
+
+This might fail if you don't have Fastlane, which is what happened to me.
+
+## Android
+
+```bash
+eas build --profile=preview --platform=android --local
+...
+...
+You can find the build artifacts in /Users/gerardo/dev/learning/react-native-intermediate-plantly/build-1755394689121.apk
+```
+
+## Google Play Console
+[My console](https://play.google.com/console/u/0/developers/8930772880144692195/app-list?onboardingflow=signup)
+
+You can build this locally
+```sh
+You can find the build artifacts in /Users/xxx/dev/learning/react-native-intermediate-plantly/build-1755394689121.apk
+```

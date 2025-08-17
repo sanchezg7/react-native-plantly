@@ -39,3 +39,5 @@ yarn-error.*
 
 ios
 android
+# Adding this to store apk generated locally
+build

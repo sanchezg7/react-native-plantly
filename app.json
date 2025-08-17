@@ -16,7 +16,10 @@
     "ios": {
       "icon": "./assets/icon.png",
       "supportsTablet": true,
-      "bundleIdentifier": "com.gtechsynergy.plantly"
+      "bundleIdentifier": "com.gtechsynergy.plantly",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -43,7 +46,9 @@
       [
         "expo-font",
         {
-          "fonts": ["node_modules/@expo-google-fonts/caveat/400Regular/Caveat_400Regular.ttf"]
+          "fonts": [
+            "node_modules/@expo-google-fonts/caveat/400Regular/Caveat_400Regular.ttf"
+          ]
         }
       ],
       [
